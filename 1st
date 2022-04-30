@@ -1,0 +1,72 @@
+                                                       //
+                                                       //  ContentView.swift
+                                                       //  from_scratch
+                                                       //
+                                                       //  Created by Choices Consequences on 4/15/22.
+                                                       //
+
+                                                       import SwiftUI
+
+                                                       struct ContentView: View {
+                                                                  @State var username: String = ""
+                                                                  @State var lastname: String = ""
+                                                                  let theTiers: [String] = ["Beginner", "Intermediate", "Expert"]
+                                                                  @State private var selectedTier = "Beginner"
+                                                                  let profileImage = profile_pic()
+                                                                  
+                                                                  var body: some View {
+                                                                             
+                                                                             VStack {
+                                                                                        
+                                                                                        VStack {
+                                                                                                   
+                                                                                                   //Intro logo top page
+                                                                                                   Image("imMast").resizable().frame(width: 350, height: 50, alignment: .center)
+                                                                                        }
+                                                                                        //image of profile
+                                                                                        VStack {
+                                                                                                   profile_pic()
+                                                                                                   HStack {
+                                                                                                              logoApp()
+                                                                                                              Text("What Will You Become").italic().font(.title).offset(x: -19)
+                                                                                                   }
+                                                                                        
+                                                                                              
+                                                                                                   //User information
+                                                                                                   Form {
+                                                                                                              Section {
+                      TextField("IML Username", text: $username)
+                                                                                                                         TextField("IML Password", text: $lastname)
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         //user chooses tier option they are in
+//                                                                                                                         Picker("Your Expertise", selection: $selectedTier) {
+//                                                                                                                                    ForEach(theTiers, id: \.self) {
+//                                                                                                                                               Text($0)
+                                                                                                                                    }
+                                                                                                                         }
+                                                                                                   appleSign()
+                                                                                                              }
+                                                                                                   }
+                                                                                                   
+                                                                                        }
+                                                                             }
+                                                                  
+                                                       
+
+
+
+
+
+
+
+
+
+
+
+                                                       struct ContentView_Previews: PreviewProvider {
+                                                                  static var previews: some View {
+                                                                             ContentView()
+                                                                  }
+                                                       }
